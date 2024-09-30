@@ -6,20 +6,25 @@ const userSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    email: {
+    username: {
         type: String,
         required: true,
         unique: true,
-        trim: true,
-        lowercase: true
+        trim: true
     },
     password: {
         type: String,
         required: true
     },
-    details: {
+    workoutPlans: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Details',
+        ref: 'WorkoutPlan',
+        default: null 
+    },
+    dietPlans: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'DietPlan',
+        default: null 
     }
 });
 
