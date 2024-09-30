@@ -19,15 +19,15 @@ const userSchema = new mongoose.Schema({
     workoutPlans: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'WorkoutPlan',
-        default: null 
+        required: true
     },
     dietPlans: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'DietPlan',
-        default: null 
+        required: true
     }
 });
 
-const UserModel = mongoose.model("User", userSchema);
+const User = mongoose.model('User', userSchema);
 
-export default UserModel;
+export default User;
